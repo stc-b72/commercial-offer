@@ -315,19 +315,18 @@ footer {
     }
 
     .hero-section {
-        height: auto;
-        padding: 120px 20px 60px;
-        background-attachment: scroll;
+        padding-top: 220px !important; /* Еще больше места для высокой шапки */
+        overflow: hidden; /* Прячем всё, что пытается вылезти за края */
     }
 
     .hero-content h1 {
-        font-size: 1.6rem !important;
-        line-height: 1.2;
-        word-wrap: break-word;
+        font-size: 1.5rem !important; /* Уменьшаем еще немного */
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word; /* Принудительный перенос слов */
         overflow-wrap: break-word;
-        hyphens: auto;
-        margin-bottom: 15px;
-        padding: 0 10px;
+        margin-top: 20px; /* Дополнительный отступ сверху */
     }
 
     .subtitle {
@@ -335,8 +334,11 @@ footer {
     }
 
     .btn-main {
-        width: 100%;
-        max-width: 300px;
+        display: block; /* Делаем блочной */
+        width: 100%;    /* Растягиваем на всю ширину */
+        max-width: 280px; /* Но ограничиваем, чтобы не была слишком длинной */
+        margin: 0 auto;  /* Центрируем */
+        box-sizing: border-box; /* Чтобы паддинги не раздували ширину */
     }
 
     .services-grid {
@@ -374,6 +376,11 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+     html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
     }
 }
 .gray-bg {

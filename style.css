@@ -1,0 +1,378 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333333;
+    --header-bg: #3E706F;
+    --nav-text: #ffffff;
+    --accent-color: #E58E4B;
+    --footer-bg: #2B2B2B;
+    --footer-text: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --header-bg: #254443;
+    --footer-bg: #000000;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('gif.gif') no-repeat center center/cover;
+    padding: 10px 0;
+    
+    /* Вот эти свойства отвечают за фиксацию */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы шапка была поверх всех блоков */
+}
+
+/* Контейнер: просто и понятно распределяем 3 элемента */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Центровка по вертикали */
+    justify-content: space-between; /* Лого слева, телефон справа, меню между ними */
+    padding: 10px 20px;
+}
+
+/* Логотип */
+.logo img {
+    height: 80px; 
+    width: auto;
+    display: block;
+}
+
+/* Навигация */
+nav {
+    display: flex;
+    gap: 30px;
+    margin: 0 200px; /* Отступы по бокам, чтобы не прилипало */
+}
+
+.header-container nav a {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap; /* Чтобы пункты не переносились */
+}
+
+/* Телефон */
+.header-phone a {
+    color: var(--accent-color) !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav a {
+    color: var(--nav-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.hero-section {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Добавляем градиент поверх карты для идеальной читаемости текста */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+                url('map-bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Карта будет красиво стоять на месте при скролле */
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Чуть крупнее */
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    opacity: 1; /* Делаем текст четче */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Новая плашка лицензии (вставь это) */
+.license-badge {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(4px);
+}
+
+.btn-main {
+    padding: 18px 40px; /* Кнопку делаем чуть массивнее */
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-main:hover {
+    background-color: #d17a35;
+    transform: translateY(-2px); /* Эффект приподнимания */
+    box-shadow: 0 5px 15px rgba(229, 142, 75, 0.4);
+}
+
+/* Стили для нового блока "О компании" */
+.gray-bg {
+    background-color: #ececec; /* Светло-серый фон для разделения блоков */
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.features-list li {
+    font-weight: bold;
+    color: var(--header-bg);
+    position: relative;
+}
+
+/* Маленькая точка-иконка перед списком */
+.features-list li::before {
+    content: "✓";
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+
+/* Футер: делаем сеткой, как в новом HTML */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+.about-text {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.gray-bg {
+    background-color: #f9f9f9; /* Еле заметный серый, чтобы отделить от услуг */
+    padding: 60px 20px;
+    border-radius: 15px;
+}
+/* Принудительно возвращаем сетку для карточек */
+.services-grid {
+    display: grid !important; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    margin-top: 40px;
+    text-align: center; /* Центрируем текст внутри */
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--header-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Центрируем блок "О компании" */
+.content-section.gray-bg {
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.features-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 30px;
+}
+/* Контейнер для двух колонок */
+.split-container {
+    display: flex;
+    gap: 40px; /* Расстояние между О нас и Ценами */
+    text-align: left; /* Убираем центрирование для текста в колонках */
+}
+
+.info-block {
+    flex: 1; /* Колонки делят место 50 на 50 */
+}
+
+/* Настраиваем твой список features, чтобы он не шел в ряд в узкой колонке */
+.features-list {
+    display: flex;
+    flex-direction: column; /* Теперь пункты друг под другом */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Стили для списка цен */
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.price-list li strong {
+    color: var(--accent-color);
+}
+
+/* Адаптивность: на телефонах блоки станут друг под друга */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+}
+.gray-bg {
+    position: relative; /* ОБЯЗАТЕЛЬНО: это "якорь" для логотипа */
+    background-color: #f9f9f9; 
+    padding: 60px 20px;
+    border-radius: 15px;
+    overflow: hidden; /* Чтобы лого не вылезало за границы блока */
+}
+
+.gray-bg::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрируем */
+    width: 400px;        /* Настройте размер под себя */
+    height: 400px;
+    background: url('logo-shap.png') no-repeat center center / contain;
+    opacity: 0.15;       /* Прозрачность: 0.05 — это 5%. Почти незаметно, но стильно */
+    z-index: 0;          /* Отправляем на задний план */
+    pointer-events: none; /* Чтобы лого не мешало выделять текст курсором */
+}
+
+/* Чтобы текст был выше логотипа */
+.split-container {
+    position: relative;
+    z-index: 1;
+}
+/* Затемнение фона */
+.modal-overlay {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+/* Само окно */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Кнопка закрытия */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.modal-contacts a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.modal-note {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 20px;
+}

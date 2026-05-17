@@ -368,8 +368,26 @@ footer {
         position: relative;
         width: 100%;
     }
+
+    .info-chess-section {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .chess-row {
+        width: 100%;
+    }
+
+    .chess-row.row-right, 
+    .chess-row.row-left {
+        justify-content: center; 
+    }
+
     .chess-card {
         width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 }
 .gray-bg {

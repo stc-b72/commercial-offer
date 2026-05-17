@@ -21,6 +21,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: all 0.3s ease;
+    line-height: 1.6;
 }
 
 header {
@@ -28,36 +29,32 @@ header {
                 url('gif.gif') no-repeat center center/cover;
     padding: 10px 0;
     
-    /* Вот эти свойства отвечают за фиксацию */
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Чтобы шапка была поверх всех блоков */
+    z-index: 1000;
 }
 
-/* Контейнер: просто и понятно распределяем 3 элемента */
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: center; /* Центровка по вертикали */
-    justify-content: space-between; /* Лого слева, телефон справа, меню между ними */
+    align-items: center;
+    justify-content: space-between; 
     padding: 10px 20px;
 }
 
-/* Логотип */
 .logo img {
     height: 80px; 
     width: auto;
     display: block;
 }
 
-/* Навигация */
 nav {
     display: flex;
     gap: 30px;
-    margin: 0 200px; /* Отступы по бокам, чтобы не прилипало */
+    margin: 0 200px;
 }
 
 .header-container nav a {
@@ -67,10 +64,9 @@ nav {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
-    white-space: nowrap; /* Чтобы пункты не переносились */
+    white-space: nowrap;
 }
 
-/* Телефон */
 .header-phone a {
     color: var(--accent-color) !important;
     font-weight: bold;
@@ -111,16 +107,15 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Добавляем градиент поверх карты для идеальной читаемости текста */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
                 url('map-bg.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* Карта будет красиво стоять на месте при скролле */
+    background-attachment: fixed; 
     color: white;
     padding: 0 20px;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem; /* Чуть крупнее */
+    font-size: 3.5rem;
     margin-bottom: 15px;
     font-weight: 800;
 }
@@ -128,13 +123,12 @@ footer {
 .subtitle {
     font-size: 1.25rem;
     margin-bottom: 35px;
-    opacity: 1; /* Делаем текст четче */
+    opacity: 1;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Новая плашка лицензии (вставь это) */
 .license-badge {
     display: inline-block;
     margin-bottom: 20px;
@@ -149,7 +143,7 @@ footer {
 }
 
 .btn-main {
-    padding: 18px 40px; /* Кнопку делаем чуть массивнее */
+    padding: 18px 40px;
     background-color: var(--accent-color);
     color: white;
     text-decoration: none;
@@ -162,13 +156,12 @@ footer {
 
 .btn-main:hover {
     background-color: #d17a35;
-    transform: translateY(-2px); /* Эффект приподнимания */
+    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(229, 142, 75, 0.4);
 }
 
-/* Стили для нового блока "О компании" */
 .gray-bg {
-    background-color: #ececec; /* Светло-серый фон для разделения блоков */
+    background-color: #ececec;
     border-radius: 20px;
     margin-bottom: 40px;
 }
@@ -189,14 +182,12 @@ footer {
     position: relative;
 }
 
-/* Маленькая точка-иконка перед списком */
 .features-list li::before {
     content: "✓";
     margin-right: 8px;
     color: var(--accent-color);
 }
 
-/* Футер: делаем сеткой, как в новом HTML */
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -217,17 +208,17 @@ footer {
 }
 
 .gray-bg {
-    background-color: #f9f9f9; /* Еле заметный серый, чтобы отделить от услуг */
+    background-color: #f9f9f9;
     padding: 60px 20px;
     border-radius: 15px;
 }
-/* Принудительно возвращаем сетку для карточек */
+
 .services-grid {
     display: grid !important; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 20px;
     margin-top: 40px;
-    text-align: center; /* Центрируем текст внутри */
+    text-align: center;
 }
 
 .service-card {
@@ -240,7 +231,6 @@ footer {
     flex-direction: column;
     justify-content: center;
 }
-/* Центрируем блок "О компании" */
 .content-section.gray-bg {
     text-align: center;
     max-width: 1200px;
@@ -254,26 +244,22 @@ footer {
     padding: 0;
     gap: 30px;
 }
-/* Контейнер для двух колонок */
 .split-container {
     display: flex;
-    gap: 40px; /* Расстояние между О нас и Ценами */
-    text-align: left; /* Убираем центрирование для текста в колонках */
+    gap: 40px;
+    text-align: left;
 }
 
 .info-block {
-    flex: 1; /* Колонки делят место 50 на 50 */
+    flex: 1;
 }
-
-/* Настраиваем твой список features, чтобы он не шел в ряд в узкой колонке */
 .features-list {
     display: flex;
-    flex-direction: column; /* Теперь пункты друг под другом */
+    flex-direction: column;
     gap: 10px;
     margin-top: 20px;
 }
 
-/* Стили для списка цен */
 .price-list {
     list-style: none;
     padding: 0;
@@ -315,18 +301,18 @@ footer {
     }
 
     .hero-section {
-        padding-top: 220px !important; /* Еще больше места для высокой шапки */
-        overflow: hidden; /* Прячем всё, что пытается вылезти за края */
+        padding-top: 220px !important;
+        overflow: hidden;
     }
 
     .hero-content h1 {
-        font-size: 1.5rem !important; /* Уменьшаем еще немного */
+        font-size: 1.5rem !important;
         display: block;
         width: 100%;
         box-sizing: border-box;
-        word-wrap: break-word; /* Принудительный перенос слов */
+        word-wrap: break-word;
         overflow-wrap: break-word;
-        margin-top: 20px; /* Дополнительный отступ сверху */
+        margin-top: 20px;
     }
 
     .subtitle {
@@ -334,11 +320,11 @@ footer {
     }
 
     .btn-main {
-        display: block; /* Делаем блочной */
-        width: 100%;    /* Растягиваем на всю ширину */
-        max-width: 280px; /* Но ограничиваем, чтобы не была слишком длинной */
-        margin: 0 auto;  /* Центрируем */
-        box-sizing: border-box; /* Чтобы паддинги не раздували ширину */
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .services-grid {
@@ -382,13 +368,16 @@ footer {
         position: relative;
         width: 100%;
     }
+    .chess-card {
+        width: 100%;
+    }
 }
 .gray-bg {
-    position: relative; /* ОБЯЗАТЕЛЬНО: это "якорь" для логотипа */
+    position: relative;
     background-color: #f9f9f9; 
     padding: 60px 20px;
     border-radius: 15px;
-    overflow: hidden; /* Чтобы лого не вылезало за границы блока */
+    overflow: hidden;
 }
 
 .gray-bg::before {
@@ -396,23 +385,20 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Центрируем */
-    width: 400px;        /* Настройте размер под себя */
+    transform: translate(-50%, -50%); 
+    width: 400px;
     height: 400px;
     background: url('logo-shap.png') no-repeat center center / contain;
-    opacity: 0.15;       /* Прозрачность: 0.05 — это 5%. Почти незаметно, но стильно */
-    z-index: 0;          /* Отправляем на задний план */
-    pointer-events: none; /* Чтобы лого не мешало выделять текст курсором */
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
 }
-
-/* Чтобы текст был выше логотипа */
 .split-container {
     position: relative;
     z-index: 1;
 }
-/* Затемнение фона */
 .modal-overlay {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -422,8 +408,6 @@ footer {
     z-index: 2000;
     backdrop-filter: blur(5px);
 }
-
-/* Само окно */
 .modal-content {
     position: absolute;
     top: 50%;
@@ -437,8 +421,6 @@ footer {
     width: 90%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
-/* Кнопка закрытия */
 .close-modal {
     position: absolute;
     top: 15px;
@@ -464,4 +446,63 @@ footer {
 }
 #services {
     scroll-margin-top: 150px; 
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+.info-chess-section {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.chess-row {
+    display: flex;
+    width: 100%;
+}
+
+.chess-row.row-right {
+    justify-content: flex-end;
+}
+
+.chess-row.row-left {
+    justify-content: flex-start;
+}
+
+.chess-card {
+    width: 48%; 
+    padding: 30px;
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.chess-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; 
+}
+
+.row-right .chess-card::before {
+    background-color: #ff9800;
+}
+
+.row-left .chess-card::before {
+    background-color: #2d7d75;
+}
+
+.chess-card h3 {
+    margin-top: 5px; 
+    margin-bottom: 15px;
+    color: #333333; 
+    font-size: 1.3rem;
 }

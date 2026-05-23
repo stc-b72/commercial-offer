@@ -394,6 +394,13 @@ footer {
         padding: 20px !important;
         box-sizing: border-box !important;
     }
+    .custom-map-container iframe {
+        height: 340px !important;
+    }
+    .custom-map-wrapper {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
 }
 .gray-bg {
     position: relative;
@@ -528,4 +535,17 @@ p {
     margin-bottom: 15px;
     color: #333333; 
     font-size: 1.3rem;
+}
+.custom-map-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.custom-map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
